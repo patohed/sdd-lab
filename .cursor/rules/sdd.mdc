@@ -1,0 +1,6 @@
+---
+description: Reglas globales del repo. Leer AGENTS.md como fuente de verdad.
+alwaysApply: true
+---
+
+Leé `AGENTS.md` en la raíz del repo. No dupliques reglas acá.

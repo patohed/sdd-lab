@@ -10,21 +10,39 @@ y recién después se genera el código.
 
 ## Estructura
 ```
+AGENTS.md              # instrucciones canónicas para cualquier agente IA
+CLAUDE.md              # stub → AGENTS.md (Claude Code)
+.github/
+  copilot-instructions.md   # stub → AGENTS.md (Copilot)
+  pull_request_template.md  # checklist SDD para PRs
+.cursor/rules/sdd.mdc  # stub → AGENTS.md (Cursor)
 spec/
   requirements.md      # qué hace el sistema
   architecture.md      # cómo está armado
   rules.md             # validaciones, seguridad, errores
-issues/
-  01-login-basico.md   # vertical slice (tracer bullet)
+  glossary.md          # vocabulario del dominio
+skills/                # patrones reutilizables del equipo (vivo)
+  README.md
+  writing-good-specs.md
+  vertical-slicing.md
+  security-baseline.md
+  postmortem-template.md
+decisions/             # ADRs
+  ADR-001-http-nativo.md
+  ADR-002-token-fake.md
+issues/                # vertical slices
+  01-login-basico.md
   02-rutas-y-metodos.md
+prompts/               # prompts canónicos por fase
+  grilling-session.md
+  generate-questions.md
+  vertical-slices.md
+  generate-code.md
+  code-review.md
+  spec-drift-check.md
 src/
-  login.js             # implementación alineada al spec
-prompts/
-  grilling-session.md  # interrogatorio para cerrar gaps
-  generate-questions.md# detectar gaps puntuales
-  vertical-slices.md   # PRD → issues paralelizables
-  generate-code.md     # generar código desde el spec
-  code-review.md       # reviewer automatizado
+  login.js
+CONTRIBUTING.md        # cómo usar como template + ruta de adopción
 README.md
 ```
 
@@ -76,8 +94,4 @@ La idea clave: **el spec es la fuente de verdad**.
 Si el código y el spec se contradicen, gana el spec (o se actualiza el spec
 de forma explícita).
 
-## Inspiración
-Las ideas extra (grilling, vertical slices / tracer bullets, reviewer
-con contexto limpio) vienen del taller de Matt Pocock
-*"Full Walkthrough: Workflow for AI Coding"* (AI Engineer).
-Acá están adaptadas a una demo mínima.
+
