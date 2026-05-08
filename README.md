@@ -3,6 +3,10 @@
 Demo mínima de **Spec-Driven Development (SDD)** usando un login simple
 en Node.js puro (sin frameworks, sin DB, sin dependencias).
 
+> 👉 **Si recién clonaste/template-aste este repo: leé [QUICKSTART.md](QUICKSTART.md).**
+> Es la guía paso a paso del primer día (qué hacer en Cursor / VS Code /
+> Claude Code, cómo cargar el brief del cliente, cómo arrancar la grilling).
+
 ## ¿Qué es esto?
 Un proyecto pensado para mostrarle a un equipo cómo se ve SDD en la práctica:
 primero se escribe el spec, luego se hacen preguntas para cerrar gaps,
