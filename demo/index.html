@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sdd-lab — Demo visual</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular'],
+          },
+          colors: {
+            border: 'hsl(240 5.9% 90%)',
+            input: 'hsl(240 5.9% 90%)',
+            ring: 'hsl(240 5.9% 10%)',
+            bg: 'hsl(0 0% 100%)',
+            fg: 'hsl(240 10% 3.9%)',
+            muted: 'hsl(240 4.8% 95.9%)',
+            'muted-fg': 'hsl(240 3.8% 46.1%)',
+            primary: 'hsl(240 5.9% 10%)',
+            'primary-fg': 'hsl(0 0% 98%)',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    code, pre { font-family: 'JetBrains Mono', monospace; }
+    .step-active { box-shadow: 0 0 0 2px hsl(240 5.9% 10%); }
+  </style>
+</head>
+<body class="bg-bg text-fg antialiased">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 w-full border-b border-border bg-bg/80 backdrop-blur">
+    <div class="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
+      <div class="flex items-center gap-2">
+        <div class="h-6 w-6 rounded-md bg-primary"></div>
+        <span class="font-semibold">sdd-lab</span>
+        <span class="ml-2 hidden rounded-full border border-border px-2 py-0.5 text-xs text-muted-fg sm:inline">demo visual</span>
+      </div>
+      <nav class="hidden gap-6 text-sm text-muted-fg md:flex">
+        <a href="#que-es" class="hover:text-fg">Qué es</a>
+        <a href="#flujo" class="hover:text-fg">Flujo</a>
+        <a href="#template" class="hover:text-fg">Template</a>
+        <a href="#quickstart" class="hover:text-fg">Quickstart</a>
+        <a href="#agentes" class="hover:text-fg">Agentes</a>
+      </nav>
+      <a href="https://github.com/patohed/sdd-lab" target="_blank" class="inline-flex h-8 items-center rounded-md border border-border bg-bg px-3 text-xs font-medium hover:bg-muted">GitHub →</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="border-b border-border">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <div class="inline-flex items-center gap-2 rounded-full border border-border bg-muted px-3 py-1 text-xs text-muted-fg">
+        <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+        Documento vivo · Spec-Driven Development
+      </div>
+      <h1 class="mt-6 text-5xl font-bold tracking-tight md:text-6xl">
+        El spec es la fuente de verdad.
+      </h1>
+      <p class="mt-4 max-w-2xl text-lg text-muted-fg">
+        sdd-lab es un repositorio template colaborativo para que tu equipo
+        adopte Spec-Driven Development con agentes de IA, sin reinventar
+        el flujo cada vez.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#quickstart" class="inline-flex h-10 items-center rounded-md bg-primary px-4 text-sm font-medium text-primary-fg hover:opacity-90">Empezar quickstart</a>
+        <a href="#flujo" class="inline-flex h-10 items-center rounded-md border border-border bg-bg px-4 text-sm font-medium hover:bg-muted">Ver el flujo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUE ES -->
+  <section id="que-es" class="border-b border-border">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <h2 class="text-3xl font-semibold tracking-tight">¿Qué es este repo?</h2>
+      <p class="mt-2 max-w-2xl text-muted-fg">
+        Un laboratorio reutilizable. El producto de ejemplo (un login)
+        es secundario: lo que importa son los <strong>artefactos</strong>
+        que el equipo va acumulando.
+      </p>
+
+      <div class="mt-10 grid gap-4 md:grid-cols-3">
+        <!-- card -->
+        <div class="rounded-lg border border-border bg-bg p-5 shadow-sm">
+          <div class="text-2xl">📋</div>
+          <h3 class="mt-3 font-semibold">Spec</h3>
+          <p class="mt-1 text-sm text-muted-fg">requirements, architecture, rules, glossary. Lo que hace el sistema.</p>
+        </div>
+        <div class="rounded-lg border border-border bg-bg p-5 shadow-sm">
+          <div class="text-2xl">🧠</div>
+          <h3 class="mt-3 font-semibold">Skills</h3>
+          <p class="mt-1 text-sm text-muted-fg">Patrones reutilizables que el agente carga bajo demanda.</p>
+        </div>
+        <div class="rounded-lg border border-border bg-bg p-5 shadow-sm">
+          <div class="text-2xl">🗂️</div>
+          <h3 class="mt-3 font-semibold">Decisions</h3>
+          <p class="mt-1 text-sm text-muted-fg">ADRs con el contexto de por qué se eligió cada cosa.</p>
+        </div>
+        <div class="rounded-lg border border-border bg-bg p-5 shadow-sm">
+          <div class="text-2xl">💬</div>
+          <h3 class="mt-3 font-semibold">Prompts</h3>
+          <p class="mt-1 text-sm text-muted-fg">Prompts canónicos para cada fase del ciclo SDD.</p>
+        </div>
+        <div class="rounded-lg border border-border bg-bg p-5 shadow-sm">
+          <div class="text-2xl">🎯</div>
+          <h3 class="mt-3 font-semibold">Issues (slices)</h3>
+          <p class="mt-1 text-sm text-muted-fg">Vertical slices independientes, cada uno con definition of done.</p>
+        </div>
+        <div class="rounded-lg border border-border bg-bg p-5 shadow-sm">
+          <div class="text-2xl">🤖</div>
+          <h3 class="mt-3 font-semibold">AGENTS.md</h3>
+          <p class="mt-1 text-sm text-muted-fg">Instrucciones canónicas que cualquier agente IA lee al iniciar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLUJO -->
+  <section id="flujo" class="border-b border-border bg-muted/30">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <h2 class="text-3xl font-semibold tracking-tight">El ciclo SDD</h2>
+      <p class="mt-2 max-w-2xl text-muted-fg">
+        Humano arriba, agente al medio, humano al final. La retroalimentación
+        siempre vuelve al spec.
+      </p>
+
+      <div class="mt-10 overflow-x-auto">
+        <div class="flex min-w-[900px] items-stretch gap-2">
+          <!-- step -->
+          <div class="flex-1 rounded-lg border border-border bg-bg p-4">
+            <div class="text-xs font-medium text-muted-fg">01 · humano</div>
+            <div class="mt-1 font-semibold">Idea</div>
+            <p class="mt-1 text-xs text-muted-fg">Brief del cliente, scope, notas.</p>
+          </div>
+          <div class="flex items-center text-muted-fg">→</div>
+          <div class="flex-1 rounded-lg border border-border bg-bg p-4">
+            <div class="text-xs font-medium text-muted-fg">02 · humano + IA</div>
+            <div class="mt-1 font-semibold">Grilling</div>
+            <p class="mt-1 text-xs text-muted-fg">El agente interroga hasta cerrar gaps.</p>
+          </div>
+          <div class="flex items-center text-muted-fg">→</div>
+          <div class="flex-1 rounded-lg border border-border bg-bg p-4">
+            <div class="text-xs font-medium text-muted-fg">03 · humano</div>
+            <div class="mt-1 font-semibold">Spec</div>
+            <p class="mt-1 text-xs text-muted-fg">Fuente de verdad versionada.</p>
+          </div>
+          <div class="flex items-center text-muted-fg">→</div>
+          <div class="flex-1 rounded-lg border border-border bg-bg p-4">
+            <div class="text-xs font-medium text-muted-fg">04 · IA</div>
+            <div class="mt-1 font-semibold">Slices</div>
+            <p class="mt-1 text-xs text-muted-fg">Issues verticales paralelizables.</p>
+          </div>
+          <div class="flex items-center text-muted-fg">→</div>
+          <div class="flex-1 rounded-lg border border-border bg-bg p-4">
+            <div class="text-xs font-medium text-muted-fg">05 · IA</div>
+            <div class="mt-1 font-semibold">Code</div>
+            <p class="mt-1 text-xs text-muted-fg">Implementación alineada al spec.</p>
+          </div>
+          <div class="flex items-center text-muted-fg">→</div>
+          <div class="flex-1 rounded-lg border border-border bg-bg p-4">
+            <div class="text-xs font-medium text-muted-fg">06 · IA</div>
+            <div class="mt-1 font-semibold">Review</div>
+            <p class="mt-1 text-xs text-muted-fg">Drift check + reviewer automatizado.</p>
+          </div>
+          <div class="flex items-center text-muted-fg">→</div>
+          <div class="flex-1 rounded-lg border border-border bg-bg p-4">
+            <div class="text-xs font-medium text-muted-fg">07 · humano</div>
+            <div class="mt-1 font-semibold">QA</div>
+            <p class="mt-1 text-xs text-muted-fg">Filtro de taste, manual.</p>
+          </div>
+        </div>
+        <div class="mt-3 text-center text-xs text-muted-fg">↑ retroalimentación: skills · ADRs · spec updates ↑</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMPLATE -->
+  <section id="template" class="border-b border-border">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <h2 class="text-3xl font-semibold tracking-tight">Usar como template</h2>
+      <p class="mt-2 max-w-2xl text-muted-fg">
+        Tres formas de arrancar un proyecto nuevo. Elegí la que mejor te quede.
+      </p>
+
+      <!-- tabs -->
+      <div class="mt-10">
+        <div class="flex gap-1 rounded-lg border border-border bg-muted p-1 text-sm">
+          <button data-tab="a" class="tab-btn flex-1 rounded-md bg-bg px-3 py-1.5 font-medium shadow-sm">A · GitHub Template</button>
+          <button data-tab="b" class="tab-btn flex-1 rounded-md px-3 py-1.5 font-medium text-muted-fg">B · Copiar carpetas</button>
+          <button data-tab="c" class="tab-btn flex-1 rounded-md px-3 py-1.5 font-medium text-muted-fg">C · Bootstrap con LLM</button>
+        </div>
+
+        <div data-panel="a" class="tab-panel mt-6 rounded-lg border border-border bg-bg p-6">
+          <h3 class="font-semibold">Recomendado</h3>
+          <ol class="mt-3 list-decimal space-y-1 pl-5 text-sm text-muted-fg">
+            <li>En GitHub → <code class="rounded bg-muted px-1">Use this template</code>.</li>
+            <li>Nombre + visibilidad de tu repo nuevo.</li>
+            <li><code class="rounded bg-muted px-1">git clone</code> y abrir en tu IDE.</li>
+            <li>Editar <code class="rounded bg-muted px-1">spec/</code> para tu dominio. Borrar issues y ADRs de ejemplo.</li>
+          </ol>
+        </div>
+
+        <div data-panel="b" class="tab-panel mt-6 hidden rounded-lg border border-border bg-bg p-6">
+          <h3 class="font-semibold">Sumar SDD a un repo existente</h3>
+          <pre class="mt-3 overflow-x-auto rounded-md bg-muted p-4 text-xs leading-relaxed">AGENTS.md
+spec/
+skills/
+prompts/
+decisions/
+.github/pull_request_template.md
+.github/copilot-instructions.md
+.cursor/rules/sdd.mdc
+CLAUDE.md
+QUICKSTART.md
+CONTRIBUTING.md</pre>
+        </div>
+
+        <div data-panel="c" class="tab-panel mt-6 hidden rounded-lg border border-border bg-bg p-6">
+          <h3 class="font-semibold">Pegale esto al agente</h3>
+          <pre class="mt-3 overflow-x-auto rounded-md bg-muted p-4 text-xs leading-relaxed">Leé `AGENTS.md` y `skills/README.md`. Resumime el flujo SDD que sigue
+este repo y cómo se aplica a mi feature: &lt;descripción&gt;. Después
+hacé una grilling session conmigo siguiendo `prompts/grilling-session.md`.</pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICKSTART -->
+  <section id="quickstart" class="border-b border-border bg-muted/30">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <h2 class="text-3xl font-semibold tracking-tight">Quickstart · Tu primer día</h2>
+      <p class="mt-2 max-w-2xl text-muted-fg">
+        Clickeá cada paso para ver qué hacer. Ya tenés el repo abierto en
+        Cursor, VS Code o Claude Code.
+      </p>
+
+      <div class="mt-10 grid gap-6 lg:grid-cols-[280px_1fr]">
+        <!-- stepper -->
+        <ol id="stepper" class="space-y-1">
+          <li><button data-step="0" class="step-btn step-active w-full rounded-md border border-border bg-bg px-3 py-2 text-left text-sm">
+            <span class="text-muted-fg">00 ·</span> Modelo mental
+          </button></li>
+          <li><button data-step="1" class="step-btn w-full rounded-md border border-border bg-bg px-3 py-2 text-left text-sm hover:bg-muted">
+            <span class="text-muted-fg">01 ·</span> Inputs del cliente
+          </button></li>
+          <li><button data-step="2" class="step-btn w-full rounded-md border border-border bg-bg px-3 py-2 text-left text-sm hover:bg-muted">
+            <span class="text-muted-fg">02 ·</span> Configurar agente
+          </button></li>
+          <li><button data-step="3" class="step-btn w-full rounded-md border border-border bg-bg px-3 py-2 text-left text-sm hover:bg-muted">
+            <span class="text-muted-fg">03 ·</span> Grilling session
+          </button></li>
+          <li><button data-step="4" class="step-btn w-full rounded-md border border-border bg-bg px-3 py-2 text-left text-sm hover:bg-muted">
+            <span class="text-muted-fg">04 ·</span> Generar spec
+          </button></li>
+          <li><button data-step="5" class="step-btn w-full rounded-md border border-border bg-bg px-3 py-2 text-left text-sm hover:bg-muted">
+            <span class="text-muted-fg">05 ·</span> Vertical slices
+          </button></li>
+          <li><button data-step="6" class="step-btn w-full rounded-md border border-border bg-bg px-3 py-2 text-left text-sm hover:bg-muted">
+            <span class="text-muted-fg">06 ·</span> Implementación
+          </button></li>
+          <li><button data-step="7" class="step-btn w-full rounded-md border border-border bg-bg px-3 py-2 text-left text-sm hover:bg-muted">
+            <span class="text-muted-fg">07 ·</span> Review + drift
+          </button></li>
+          <li><button data-step="8" class="step-btn w-full rounded-md border border-border bg-bg px-3 py-2 text-left text-sm hover:bg-muted">
+            <span class="text-muted-fg">08 ·</span> QA humano
+          </button></li>
+          <li><button data-step="9" class="step-btn w-full rounded-md border border-border bg-bg px-3 py-2 text-left text-sm hover:bg-muted">
+            <span class="text-muted-fg">09 ·</span> Cerrar ciclo
+          </button></li>
+        </ol>
+
+        <!-- panel -->
+        <div id="step-panel" class="rounded-lg border border-border bg-bg p-6 shadow-sm">
+          <!-- contenido inyectado por JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENTES -->
+  <section id="agentes" class="border-b border-border">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+      <h2 class="text-3xl font-semibold tracking-tight">Cómo "saben" los agentes</h2>
+      <p class="mt-2 max-w-2xl text-muted-fg">
+        No saben mágicamente. Cada IDE lee un archivo distinto. Nuestro repo
+        tiene <strong>un solo</strong> <code class="rounded bg-muted px-1">AGENTS.md</code>
+        canónico, y el resto son stubs de 2 líneas que apuntan ahí.
+      </p>
+
+      <div class="mt-10 grid gap-4 md:grid-cols-2">
+        <div class="rounded-lg border border-border bg-bg p-5">
+          <div class="flex items-center gap-2">
+            <div class="h-8 w-8 rounded-md bg-blue-500/10 text-blue-600 grid place-items-center text-sm font-bold">VS</div>
+            <h3 class="font-semibold">VS Code + Copilot</h3>
+          </div>
+          <p class="mt-2 text-sm text-muted-fg">Lee <code class="rounded bg-muted px-1">.github/copilot-instructions.md</code></p>
+        </div>
+        <div class="rounded-lg border border-border bg-bg p-5">
+          <div class="flex items-center gap-2">
+            <div class="h-8 w-8 rounded-md bg-zinc-900/10 grid place-items-center text-sm font-bold">⚡</div>
+            <h3 class="font-semibold">Cursor</h3>
+          </div>
+          <p class="mt-2 text-sm text-muted-fg">Lee <code class="rounded bg-muted px-1">.cursor/rules/*.mdc</code></p>
+        </div>
+        <div class="rounded-lg border border-border bg-bg p-5">
+          <div class="flex items-center gap-2">
+            <div class="h-8 w-8 rounded-md bg-orange-500/10 text-orange-600 grid place-items-center text-sm font-bold">🅒</div>
+            <h3 class="font-semibold">Claude Code</h3>
+          </div>
+          <p class="mt-2 text-sm text-muted-fg">Lee <code class="rounded bg-muted px-1">CLAUDE.md</code></p>
+        </div>
+        <div class="rounded-lg border border-border bg-bg p-5">
+          <div class="flex items-center gap-2">
+            <div class="h-8 w-8 rounded-md bg-emerald-500/10 text-emerald-600 grid place-items-center text-sm font-bold">∗</div>
+            <h3 class="font-semibold">Aider · Codex · OpenHands</h3>
+          </div>
+          <p class="mt-2 text-sm text-muted-fg">Convención emergente: <code class="rounded bg-muted px-1">AGENTS.md</code> en raíz</p>
+        </div>
+      </div>
+
+      <div class="mt-8 rounded-lg border border-border bg-muted/40 p-5 text-sm">
+        <p class="font-medium">Verificación rápida en cualquier IDE</p>
+        <p class="mt-1 text-muted-fg">Preguntale al agente:</p>
+        <pre class="mt-2 overflow-x-auto rounded-md bg-bg p-3 text-xs">¿Qué reglas seguís en este repo?</pre>
+        <p class="mt-2 text-muted-fg">Debería citar <code class="rounded bg-bg border border-border px-1">AGENTS.md</code>: spec como fuente de verdad, vertical slices, no inventar comportamiento.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10">
+    <div class="mx-auto max-w-6xl px-6 text-sm text-muted-fg">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <div>sdd-lab · documento vivo · MIT</div>
+        <div class="flex gap-4">
+          <a href="https://github.com/patohed/sdd-lab" target="_blank" class="hover:text-fg">GitHub</a>
+          <a href="../QUICKSTART.md" class="hover:text-fg">QUICKSTART.md</a>
+          <a href="../AGENTS.md" class="hover:text-fg">AGENTS.md</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tabs (template)
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(b => {
+          b.classList.remove('bg-bg', 'shadow-sm');
+          b.classList.add('text-muted-fg');
+        });
+        btn.classList.add('bg-bg', 'shadow-sm');
+        btn.classList.remove('text-muted-fg');
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
+        document.querySelector(`[data-panel="${id}"]`).classList.remove('hidden');
+      });
+    });
+
+    // Stepper (quickstart)
+    const steps = [
+      {
+        title: 'Modelo mental',
+        body: `<p class="text-sm text-muted-fg">El repo es un <strong>documento vivo</strong>. No empezás escribiendo código: empezás escribiendo el <strong>spec</strong> con ayuda del agente.</p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li class="flex gap-2"><span class="text-emerald-600">✓</span> Vos = PM / tech lead</li>
+          <li class="flex gap-2"><span class="text-emerald-600">✓</span> Agente = implementador</li>
+          <li class="flex gap-2"><span class="text-emerald-600">✓</span> Spec = fuente de verdad</li>
+        </ul>`
+      },
+      {
+        title: 'Inputs del cliente',
+        body: `<p class="text-sm text-muted-fg">Creá una carpeta <code class="rounded bg-muted px-1">inputs/</code> (ya está en .gitignore) y metele todo el material crudo:</p>
+        <pre class="mt-3 overflow-x-auto rounded-md bg-muted p-4 text-xs">inputs/
+  brief.md
+  scope.md
+  meeting-notes.md
+  references/</pre>
+        <p class="mt-3 text-sm text-muted-fg">Va a desaparecer cuando el spec esté armado. Su único objetivo: alimentar la grilling session.</p>`
+      },
+      {
+        title: 'Configurar agente',
+        body: `<p class="text-sm text-muted-fg">Tu agente lee <code class="rounded bg-muted px-1">AGENTS.md</code> automáticamente vía los stubs. No tenés que configurar nada.</p>
+        <p class="mt-3 text-sm font-medium">Verificá:</p>
+        <pre class="mt-2 overflow-x-auto rounded-md bg-muted p-4 text-xs">¿Qué reglas seguís en este repo?</pre>`
+      },
+      {
+        title: 'Grilling session',
+        body: `<p class="text-sm text-muted-fg">El agente te interroga hasta cerrar gaps. Una pregunta a la vez.</p>
+        <pre class="mt-3 overflow-x-auto rounded-md bg-muted p-4 text-xs">Sos un tech lead escéptico. Leé prompts/grilling-session.md
+y seguí esas reglas. Acá tenés el material del cliente:
+
+[pegá inputs/brief.md y inputs/scope.md enteros]
+
+Empezá la grilling session. Una pregunta a la vez.</pre>
+        <p class="mt-3 text-sm text-muted-fg">A las ~10-20 preguntas el agente responde <code class="rounded bg-muted px-1">READY_FOR_PRD</code>.</p>`
+      },
+      {
+        title: 'Generar spec',
+        body: `<p class="text-sm text-muted-fg">Una vez listo el grilling, pedí el spec:</p>
+        <pre class="mt-3 overflow-x-auto rounded-md bg-muted p-4 text-xs">En base a las decisiones que tomamos, escribí/actualizá:
+- spec/requirements.md
+- spec/architecture.md
+- spec/rules.md
+- spec/glossary.md
+
+Respetá la estructura existente.</pre>
+        <p class="mt-3 text-sm text-muted-fg">Vos revisás y editás manualmente. El spec es tuyo.</p>`
+      },
+      {
+        title: 'Vertical slices',
+        body: `<p class="text-sm text-muted-fg">Partir el spec en issues independientes:</p>
+        <pre class="mt-3 overflow-x-auto rounded-md bg-muted p-4 text-xs">Leé el spec actualizado y prompts/vertical-slices.md.
+Generá los issues en /issues/NN-titulo.md.
+No empieces a codear todavía.</pre>
+        <p class="mt-3 text-sm text-muted-fg">Cada issue debe atravesar capas y dejar algo verificable.</p>`
+      },
+      {
+        title: 'Implementación',
+        body: `<p class="text-sm text-muted-fg">Para cada issue, en orden de dependencias:</p>
+        <pre class="mt-3 overflow-x-auto rounded-md bg-muted p-4 text-xs">Implementá issues/01-titulo.md siguiendo prompts/generate-code.md.
+Si encontrás un gap en el spec, parate y preguntame.</pre>
+        <p class="mt-3 text-sm text-muted-fg">El agente ya conoce las reglas duras desde <code class="rounded bg-muted px-1">AGENTS.md</code>.</p>`
+      },
+      {
+        title: 'Review + drift check',
+        body: `<p class="text-sm text-muted-fg">Antes de mergear:</p>
+        <pre class="mt-3 overflow-x-auto rounded-md bg-muted p-4 text-xs">Leé prompts/code-review.md y prompts/spec-drift-check.md.
+Reviewá el diff de este branch contra spec/.</pre>
+        <p class="mt-3 text-sm text-muted-fg">Si dice <code class="rounded bg-muted px-1">DRIFT_DETECTED</code>: actualizás el spec o revertís el código. Nunca mergees con drift sin documentar.</p>`
+      },
+      {
+        title: 'QA humano',
+        body: `<p class="text-sm text-muted-fg">Vos. A mano. No lo automatices.</p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li class="flex gap-2"><span class="text-rose-600">✗</span> Bug → nuevo issue</li>
+          <li class="flex gap-2"><span class="text-amber-600">!</span> Patrón a evitar → candidato a skill (después de 3 strikes)</li>
+          <li class="flex gap-2"><span class="text-blue-600">↑</span> Decisión arquitectónica → ADR</li>
+        </ul>`
+      },
+      {
+        title: 'Cerrar ciclo',
+        body: `<ul class="space-y-2 text-sm">
+          <li class="flex gap-2"><input type="checkbox" class="mt-0.5"> Mover issues completados a <code class="rounded bg-muted px-1">issues/done/</code></li>
+          <li class="flex gap-2"><input type="checkbox" class="mt-0.5"> ¿Aprendiste algo? → PR a <code class="rounded bg-muted px-1">skills/</code></li>
+          <li class="flex gap-2"><input type="checkbox" class="mt-0.5"> ¿Decisión no-trivial? → PR a <code class="rounded bg-muted px-1">decisions/</code></li>
+          <li class="flex gap-2"><input type="checkbox" class="mt-0.5"> Borrar <code class="rounded bg-muted px-1">inputs/</code> (ya digerido en el spec)</li>
+        </ul>`
+      },
+    ];
+
+    const panel = document.getElementById('step-panel');
+    function renderStep(i) {
+      const s = steps[i];
+      panel.innerHTML = `
+        <div class="text-xs font-medium uppercase tracking-wide text-muted-fg">Paso ${String(i).padStart(2, '0')}</div>
+        <h3 class="mt-1 text-xl font-semibold">${s.title}</h3>
+        <div class="mt-4">${s.body}</div>
+      `;
+    }
+    renderStep(0);
+    document.querySelectorAll('.step-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.step-btn').forEach(b => b.classList.remove('step-active'));
+        btn.classList.add('step-active');
+        renderStep(parseInt(btn.dataset.step, 10));
+      });
+    });
+  </script>
+</body>
+</html>
